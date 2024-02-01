@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">9000</intProp>
+        <intProp name="ThreadGroup.ramp_time">100</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">5000</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Coordinadora">
+          <stringProp name="HTTPSampler.path">https://apiv2-test.coodrinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;tipoEnvio&quot;: &quot;1&quot;,&#xd;
+    &quot;tipoProducto&quot;: &quot;4&quot;,&#xd;
+    &quot;indicativo&quot;: &quot;57&quot;,&#xd;
+    &quot;tipoDocumento&quot;: &quot;13&quot;,&#xd;
+    &quot;email&quot;: &quot;francisco.perez@yopmail.com&quot;,&#xd;
+    &quot;personaEntrega&quot;: &quot;1&quot;,&#xd;
+    &quot;indicativoEntrega&quot;: &quot;57&quot;,&#xd;
+    &quot;medidasAproximadas&quot;: [&#xd;
+        {&#xd;
+            &quot;id&quot;: 2,&#xd;
+            &quot;tipoPaq&quot;: &quot;Par de zapatos - 33 x 15 x 16&quot;,&#xd;
+            &quot;nombrePaq&quot;: &quot;Par de zapatos&quot;,&#xd;
+            &quot;medidas&quot;: &quot;33 x 15 x 16&quot;,&#xd;
+            &quot;cantidad&quot;: 1&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;ciudad&quot;: &quot;Bogota (C/Marca)&quot;,&#xd;
+    &quot;via&quot;: &quot;&quot;,&#xd;
+    &quot;numero&quot;: &quot;&quot;,&#xd;
+    &quot;tipoVia&quot;: 1,&#xd;
+    &quot;nombres&quot;: &quot;Nicolas&quot;,&#xd;
+    &quot;apellidos&quot;: &quot;Sanchez&quot;,&#xd;
+    &quot;documento&quot;: &quot;1014246620&quot;,&#xd;
+    &quot;celular&quot;: &quot;3204894961&quot;,&#xd;
+    &quot;ciudadDetalle&quot;: {&#xd;
+        &quot;observaciones&quot;: &quot;Inc. El Muña, Engativa, La Caro, Usaquen, Usme, Siberia&quot;,&#xd;
+        &quot;nombre&quot;: &quot;Bogota (C/Marca)&quot;,&#xd;
+        &quot;activo&quot;: true,&#xd;
+        &quot;ciudad_tarifa&quot;: &quot;11001002&quot;,&#xd;
+        &quot;abreviado&quot;: &quot;BOGOTA&quot;,&#xd;
+        &quot;codigo_interno&quot;: 102,&#xd;
+        &quot;dane_actual&quot;: &quot;11001002&quot;,&#xd;
+        &quot;tipo_poblacion&quot;: &quot;D&quot;,&#xd;
+        &quot;cubre_mm&quot;: true,&#xd;
+        &quot;mensajeria&quot;: true,&#xd;
+        &quot;cubre_cm&quot;: false,&#xd;
+        &quot;cubre_mqp&quot;: true,&#xd;
+        &quot;cubre_me&quot;: true,&#xd;
+        &quot;tipo_servicio&quot;: &quot;A&quot;,&#xd;
+        &quot;nombre_terminal_operativa&quot;: &quot;Bogota&quot;,&#xd;
+        &quot;codigo&quot;: &quot;11001000&quot;,&#xd;
+        &quot;sms&quot;: true,&#xd;
+        &quot;observaciones2&quot;: &quot;FCE - RD - FD - RCE&quot;,&#xd;
+        &quot;terminal_operativa&quot;: 1,&#xd;
+        &quot;dane_ciudad&quot;: &quot;11001&quot;,&#xd;
+        &quot;nombre_terminal&quot;: &quot;Bogota&quot;,&#xd;
+        &quot;codigo_postal&quot;: &quot;110831&quot;,&#xd;
+        &quot;area_telefono&quot;: 1,&#xd;
+        &quot;departamento&quot;: &quot;25&quot;,&#xd;
+        &quot;codigo_terminal&quot;: 1&#xd;
+    },&#xd;
+    &quot;direccion&quot;: &quot;test377&quot;,&#xd;
+    &quot;fechaRecogida&quot;: &quot;2024-02-01&quot;,&#xd;
+    &quot;nombreEntrega&quot;: &quot;Nicolas&quot;,&#xd;
+    &quot;apellidosEntrega&quot;: &quot;Sanchez&quot;,&#xd;
+    &quot;celularEntrega&quot;: &quot;3204894961&quot;,&#xd;
+    &quot;emailUsuario&quot;: &quot;francisco.perez1@yopmail.com&quot;,&#xd;
+    &quot;descripcionTipoVia&quot;: &quot;Autopista&quot;,&#xd;
+    &quot;aplicativo&quot;: &quot;envios&quot;&#xd;
+    //&quot;otraDireccion&quot;: &quot;calle falsa 123&quot;&#xd;
+    // &quot;aceptaTerminos&quot;: true&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

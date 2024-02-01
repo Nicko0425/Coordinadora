@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "c231beb5-56b9-48a8-9a67-6e5047e6749a",
+		"name": "Test-coordinadora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32578107",
+		"_collection_link": "https://planetary-crescent-933090.postman.co/workspace/New-Team-Workspace~03da1b9c-5760-4b3c-9711-1ba17b452278/collection/32578107-c231beb5-56b9-48a8-9a67-6e5047e6749a?action=share&source=collection_link&creator=32578107"
+	},
+	"item": [
+		{
+			"name": "Solicitud recogida Exitosa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Solicitud recogida programada exitosamente\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Solicitud recogida programada exitosamente\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "apiv2-test.coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "es-419,es;q=0.9"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://coordinadora.com/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipoEnvio\": \"1\",\n    \"tipoProducto\": \"4\",\n    \"indicativo\": \"57\",\n    \"tipoDocumento\": \"13\",\n    \"email\": \"francisco.perez@yopmail.com\",\n    \"personaEntrega\": \"1\",\n    \"indicativoEntrega\": \"57\",\n    \"medidasAproximadas\": [\n        {\n            \"id\": 2,\n            \"tipoPaq\": \"Par de zapatos - 33 x 15 x 16\",\n            \"nombrePaq\": \"Par de zapatos\",\n            \"medidas\": \"33 x 15 x 16\",\n            \"cantidad\": 1\n        }\n    ],\n    \"ciudad\": \"Bogota (C/Marca)\",\n    \"via\": \"\",\n    \"numero\": \"\",\n    \"tipoVia\": 1,\n    \"nombres\": \"Nicolas\",\n    \"apellidos\": \"Sanchez\",\n    \"documento\": \"1014246620\",\n    \"celular\": \"3204894961\",\n    \"ciudadDetalle\": {\n        \"observaciones\": \"Inc. El Muña, Engativa, La Caro, Usaquen, Usme, Siberia\",\n        \"nombre\": \"Bogota (C/Marca)\",\n        \"activo\": true,\n        \"ciudad_tarifa\": \"11001002\",\n        \"abreviado\": \"BOGOTA\",\n        \"codigo_interno\": 102,\n        \"dane_actual\": \"11001002\",\n        \"tipo_poblacion\": \"D\",\n        \"cubre_mm\": true,\n        \"mensajeria\": true,\n        \"cubre_cm\": false,\n        \"cubre_mqp\": true,\n        \"cubre_me\": true,\n        \"tipo_servicio\": \"A\",\n        \"nombre_terminal_operativa\": \"Bogota\",\n        \"codigo\": \"11001000\",\n        \"sms\": true,\n        \"observaciones2\": \"FCE - RD - FD - RCE\",\n        \"terminal_operativa\": 1,\n        \"dane_ciudad\": \"11001\",\n        \"nombre_terminal\": \"Bogota\",\n        \"codigo_postal\": \"110831\",\n        \"area_telefono\": 1,\n        \"departamento\": \"25\",\n        \"codigo_terminal\": 1\n    },\n    \"direccion\": \"test377\",\n    \"fechaRecogida\": \"2024-02-01\",\n    \"nombreEntrega\": \"Nicolas\",\n    \"apellidosEntrega\": \"Sanchez\",\n    \"celularEntrega\": \"3204894961\",\n    \"emailUsuario\": \"francisco.perez1@yopmail.com\",\n    \"descripcionTipoVia\": \"Autopista\",\n    \"aplicativo\": \"envios\"\n    //\"otraDireccion\": \"calle falsa 123\"\n    // \"aceptaTerminos\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+					"protocol": "https",
+					"host": [
+						"apiv2-test",
+						"coordinadora",
+						"com"
+					],
+					"path": [
+						"recogidas",
+						"cm-solicitud-recogidas-ms",
+						"solicitud-recogida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud recogida con fecha pasada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"El campo fecha no debe ser menor a la fecha actual.\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"no debe ser menor a la fecha actual.\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "apiv2-test.coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "es-419,es;q=0.9"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://coordinadora.com/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipoEnvio\": \"1\",\n    \"tipoProducto\": \"4\",\n    \"indicativo\": \"57\",\n    \"tipoDocumento\": \"13\",\n    \"email\": \"francisco.perez@yopmail.com\",\n    \"personaEntrega\": \"1\",\n    \"indicativoEntrega\": \"57\",\n    \"medidasAproximadas\": [\n        {\n            \"id\": 2,\n            \"tipoPaq\": \"Par de zapatos - 33 x 15 x 16\",\n            \"nombrePaq\": \"Par de zapatos\",\n            \"medidas\": \"33 x 15 x 16\",\n            \"cantidad\": 1\n        }\n    ],\n    \"ciudad\": \"Bogota (C/Marca)\",\n    \"via\": \"1\",\n    \"numero\": \"1\",\n    \"tipoVia\": 1,\n    \"nombres\": \"Nicolas\",\n    \"apellidos\": \"Sanchez\",\n    \"documento\": \"1014246620\",\n    \"celular\": \"3204894961\",\n    \"ciudadDetalle\": {\n        \"observaciones\": \"Inc. El Muña, Engativa, La Caro, Usaquen, Usme, Siberia\",\n        \"nombre\": \"Bogota (C/Marca)\",\n        \"activo\": true,\n        \"ciudad_tarifa\": \"11001002\",\n        \"abreviado\": \"BOGOTA\",\n        \"codigo_interno\": 102,\n        \"dane_actual\": \"11001002\",\n        \"tipo_poblacion\": \"D\",\n        \"cubre_mm\": true,\n        \"mensajeria\": true,\n        \"cubre_cm\": false,\n        \"cubre_mqp\": true,\n        \"cubre_me\": true,\n        \"tipo_servicio\": \"A\",\n        \"nombre_terminal_operativa\": \"Bogota\",\n        \"codigo\": \"11001000\",\n        \"sms\": true,\n        \"observaciones2\": \"FCE - RD - FD - RCE\",\n        \"terminal_operativa\": 1,\n        \"dane_ciudad\": \"11001\",\n        \"nombre_terminal\": \"Bogota\",\n        \"codigo_postal\": \"110831\",\n        \"area_telefono\": 1,\n        \"departamento\": \"25\",\n        \"codigo_terminal\": 1\n    },\n    \"direccion\": \"test212\",\n    \"fechaRecogida\": \"2023-02-01\",\n    \"nombreEntrega\": \"Nicolas\",\n    \"apellidosEntrega\": \"Sanchez\",\n    \"celularEntrega\": \"3204894961\",\n    \"emailUsuario\": \"francisco.perez1@yopmail.com\",\n    \"descripcionTipoVia\": \"Autopista\",\n    \"aplicativo\": \"envios\"\n    //\"otraDireccion\": \"calle falsa 123\"\n    // \"aceptaTerminos\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+					"protocol": "https",
+					"host": [
+						"apiv2-test",
+						"coordinadora",
+						"com"
+					],
+					"path": [
+						"recogidas",
+						"cm-solicitud-recogidas-ms",
+						"solicitud-recogida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud recogida datos incompletos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"El campo direccion esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"direccion\");",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"El campo fechaRecogida esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"fechaRecogida\");",
+							"});",
+							"",
+							"pm.test(\"El campo nombreEntrega esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"nombreEntrega\");",
+							"});",
+							"",
+							"pm.test(\"El campo apellidosEntrega esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"apellidosEntrega\");",
+							"});",
+							"",
+							"pm.test(\"El campo celularEntrega esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"celularEntrega\");",
+							"});",
+							"",
+							"pm.test(\"El campo emailUsuario esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"emailUsuario\");",
+							"});",
+							"",
+							"pm.test(\"El campo descripcionTipoVia esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"descripcionTipoVia\");",
+							"});",
+							"pm.test(\"El campo aplicativo esta vacio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"aplicativo\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "apiv2-test.coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "es-419,es;q=0.9"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://coordinadora.com",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://coordinadora.com/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipoEnvio\": \"1\",\n    \"tipoProducto\": \"4\",\n    \"indicativo\": \"57\",\n    \"tipoDocumento\": \"13\",\n    \"email\": \"francisco.perez@yopmail.com\",\n    \"personaEntrega\": \"1\",\n    \"indicativoEntrega\": \"57\",\n    \"medidasAproximadas\": [\n        {\n            \"id\": 2,\n            \"tipoPaq\": \"Par de zapatos - 33 x 15 x 16\",\n            \"nombrePaq\": \"Par de zapatos\",\n            \"medidas\": \"33 x 15 x 16\",\n            \"cantidad\": 1\n        }\n    ],\n    \"ciudad\": \"Bogota (C/Marca)\",\n    \"via\": \"1\",\n    \"numero\": \"1\",\n    \"tipoVia\": 1,\n    \"nombres\": \"Nicolas\",\n    \"apellidos\": \"Sanchez\",\n    \"documento\": \"1014246620\",\n    \"celular\": \"3204894961\",\n    \"ciudadDetalle\": {\n        \"observaciones\": \"Inc. El Muña, Engativa, La Caro, Usaquen, Usme, Siberia\",\n        \"nombre\": \"Bogota (C/Marca)\",\n        \"activo\": true,\n        \"ciudad_tarifa\": \"11001002\",\n        \"abreviado\": \"BOGOTA\",\n        \"codigo_interno\": 102,\n        \"dane_actual\": \"11001002\",\n        \"tipo_poblacion\": \"D\",\n        \"cubre_mm\": true,\n        \"mensajeria\": true,\n        \"cubre_cm\": false,\n        \"cubre_mqp\": true,\n        \"cubre_me\": true,\n        \"tipo_servicio\": \"A\",\n        \"nombre_terminal_operativa\": \"Bogota\",\n        \"codigo\": \"11001000\",\n        \"sms\": true,\n        \"observaciones2\": \"FCE - RD - FD - RCE\",\n        \"terminal_operativa\": 1,\n        \"dane_ciudad\": \"11001\",\n        \"nombre_terminal\": \"Bogota\",\n        \"codigo_postal\": \"110831\",\n        \"area_telefono\": 1,\n        \"departamento\": \"25\",\n        \"codigo_terminal\": 1\n    },\n    \"direccion\": \"\",\n    \"fechaRecogida\": \"2023-02-01\",\n    \"nombreEntrega\": \"Nicolas\",\n    \"apellidosEntrega\": \"Sanchez\",\n    \"celularEntrega\": \"3837839393\",\n    \"emailUsuario\": \"francisco.perez1@yopmail.com\",\n    \"descripcionTipoVia\": \"Autopista\",\n    \"aplicativo\": \"envios\"\n    //\"otraDireccion\": \"calle falsa 123\"\n    // \"aceptaTerminos\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+					"protocol": "https",
+					"host": [
+						"apiv2-test",
+						"coordinadora",
+						"com"
+					],
+					"path": [
+						"recogidas",
+						"cm-solicitud-recogidas-ms",
+						"solicitud-recogida"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

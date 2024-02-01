@@ -1,0 +1,175 @@
+{
+	"id": "bdeed4e8-09dd-4551-9bb3-e87af62632ef",
+	"name": "Test-coordinadora",
+	"timestamp": "2024-02-01T00:57:14.069Z",
+	"collection_id": "32578107-c231beb5-56b9-48a8-9a67-6e5047e6749a",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 6,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-02-01T00:57:09.604Z",
+	"totalFail": 7,
+	"results": [
+		{
+			"id": "2f1608f5-a7ce-4329-8dcf-8818075c775c",
+			"name": "Solicitud recogida Exitosa",
+			"url": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+			"time": 2414,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Solicitud recogida programada exitosamente": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Solicitud recogida programada exitosamente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2414
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Solicitud recogida programada exitosamente": true
+				}
+			]
+		},
+		{
+			"id": "a6bb33a8-791f-45d1-be10-e25cc59e6870",
+			"name": "Solicitud recogida con fecha pasada",
+			"url": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+			"time": 1149,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"El campo fecha no debe ser menor a la fecha actual.": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo fecha no debe ser menor a la fecha actual.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1149
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"El campo fecha no debe ser menor a la fecha actual.": true
+				}
+			]
+		},
+		{
+			"id": "7dd6810d-03b3-444d-96ca-2e2008f47943",
+			"name": "Solicitud recogida datos incompletos",
+			"url": "https://apiv2-test.coordinadora.com/recogidas/cm-solicitud-recogidas-ms/solicitud-recogida",
+			"time": 92,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"El campo direccion esta vacio": true,
+				"Status code is 200": true,
+				"El campo fechaRecogida esta vacio": false,
+				"El campo nombreEntrega esta vacio": false,
+				"El campo apellidosEntrega esta vacio": false,
+				"El campo celularEntrega esta vacio": false,
+				"El campo emailUsuario esta vacio": false,
+				"El campo descripcionTipoVia esta vacio": false,
+				"El campo aplicativo esta vacio": false
+			},
+			"testPassFailCounts": {
+				"El campo direccion esta vacio": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo fechaRecogida esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo nombreEntrega esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo apellidosEntrega esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo celularEntrega esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo emailUsuario esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo descripcionTipoVia esta vacio": {
+					"pass": 0,
+					"fail": 1
+				},
+				"El campo aplicativo esta vacio": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				92
+			],
+			"allTests": [
+				{
+					"El campo direccion esta vacio": true,
+					"Status code is 200": true,
+					"El campo fechaRecogida esta vacio": false,
+					"El campo nombreEntrega esta vacio": false,
+					"El campo apellidosEntrega esta vacio": false,
+					"El campo celularEntrega esta vacio": false,
+					"El campo emailUsuario esta vacio": false,
+					"El campo descripcionTipoVia esta vacio": false,
+					"El campo aplicativo esta vacio": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3655,
+	"collection": {
+		"requests": [
+			{
+				"id": "2f1608f5-a7ce-4329-8dcf-8818075c775c",
+				"method": "POST"
+			},
+			{
+				"id": "a6bb33a8-791f-45d1-be10-e25cc59e6870",
+				"method": "POST"
+			},
+			{
+				"id": "7dd6810d-03b3-444d-96ca-2e2008f47943",
+				"method": "POST"
+			}
+		]
+	}
+}
